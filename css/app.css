@@ -3,3 +3,33 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: aquamarine;
+}
+.header{
+    background-color: white;
+    height: 100px;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-title{
+    display: flex;
+    align-items: center;
+}
+.main-app{
+    padding: 50px;
+}
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+}
+.cell{
+    aspect-ratio: 1/1;
+    border: 2px solid rgb(10, 128, 89);
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
