@@ -17,6 +17,12 @@ body{
 .header-title{
     display: flex;
     align-items: center;
+    gap: 5px;
+}
+.header-menu{
+    display: flex;
+        align-items: center;
+    gap: 5px;
 }
 .main-app{
     padding: 50px;
@@ -28,8 +34,24 @@ body{
 .cell{
     aspect-ratio: 1/1;
     border: 2px solid rgb(10, 128, 89);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 .grid{
     display: grid;
+}
+.hard{
     grid-template-columns: repeat(10, 1fr);
+}
+.normal{
+    grid-template-columns: repeat(9, 1fr);
+}
+.easy{
+    grid-template-columns: repeat(7, 1fr);
+}
+.bg-dark{
+    background-color: rgb(6, 53, 37);
+    color: white;
 }
