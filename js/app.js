@@ -30,8 +30,7 @@ Scomponiamo quindi il problema nei suoi sotto problemi più semplici.*/
 
 console.log('campominato')
 //devo recuperare dal dom la select
-const selectElement = document.getElementById("difficolta")
-const optionElement = selectElement.value
+
 //devo recuperare dalla select la value
 //a seconda della value, il pulsante play deve generare 3 grigle diverse
 //devo recuperare dal dom il pulsante play 
@@ -42,29 +41,38 @@ playButton.addEventListener('click', function () {
     const gridElement = document.querySelector('.grid');
     //devo creare una costante row che salva quante celle voglio in una riga
     //se la difficoltà è hard deve creare una griglia di 100 celle
-    let row = 0
-    if (selectElement.value === "hard") {
-        row = 10
-        gridElement.classList.add("hard")
-    }
-     if (selectElement.value === "normal") {
-        row = 9
-        gridElement.classList.add("normal")
-    } else if (selectElement.value === "easy") {
-        row = 7
-        gridElement.classList.add("easy")
-    }
+    const selectElement = document.getElementById("difficolta")
+    const optionElement = parseInt(selectElement.value)
+    let row = optionElement;
+    let cellClass = `cell-${row}`
+    // if (selectElement.value === "hard") {
+    //     row = 10
+    //     cellClass = "hard"
+    //     //cellElement.classList.add('hard')
+    // } else if (selectElement.value === "normal") {
+    //     row = 9
+    //     cellClass = "normal"
+    //     //cellElement.classList.add('normal')
+    // } else if (selectElement.value === "easy") {
+    //     row = 7
+    //     cellClass = "easy"
+    // }
     //devo creare una costante che genera un quadrato moltiplicando row al quadrato
     const gridBox = row ** 2;
     //dentro un ciclo for devo dare un numero per ogni casella
+    
+    gridElement.innerHTML = ''
     for (let i = 0; i < gridBox; i++) {
-        const number = i + 1;
-        //console.log(number)
+        let number = i + 1;
+        console.log(number)
         //devo rendere visibili le singole celle della griglia
         //creo l'elemento div con creteelement
         const cellElement = document.createElement('div')
-        //gli dò la classe che ho già creato su css
         cellElement.className = 'cell'
+        
+        cellElement.classList.add(cellClass)
+        //gli dò la classe che ho già creato su css
+        
         //dentro inserisco il numero creato con in ciclo for
         cellElement.innerHTML = number
         //devo aggiungere al grid recuperato dal dom le celle

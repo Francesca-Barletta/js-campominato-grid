@@ -5,6 +5,7 @@
 }
 body{
     background-color: aquamarine;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .header{
     background-color: white;
@@ -18,6 +19,8 @@ body{
     display: flex;
     align-items: center;
     gap: 5px;
+    color: rgb(18, 10, 110);
+    font-size:30px;
 }
 .header-menu{
     display: flex;
@@ -33,25 +36,31 @@ body{
 }
 .cell{
     aspect-ratio: 1/1;
-    border: 2px solid rgb(10, 128, 89);
+    border: 3px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
     
 }
 .grid{
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
 }
-.hard{
-    grid-template-columns: repeat(10, 1fr);
+
+.cell-10{
+    width: calc(100% / 10);
 }
-.normal{
-    grid-template-columns: repeat(9, 1fr);
+.cell-9{
+    width: calc(100% / 9);
 }
-.easy{
-    grid-template-columns: repeat(7, 1fr);
+.cell-7{
+    width: calc(100% / 7);
 }
+
+
+
+
 .bg-dark{
-    background-color: rgb(6, 53, 37);
+    background-color: rgb(18, 10, 110);
     color: white;
 }
